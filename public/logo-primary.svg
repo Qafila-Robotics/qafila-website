@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 572" width="1024" height="572" role="img" aria-label="Qafila Robotics">
+  <rect width="1024" height="572" fill="#FAF7F2"/>
+  <line x1="245" y1="228" x2="775" y2="228" stroke="#CDBFA6" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <g fill="none" stroke="#2E2420" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="335" cy="305" r="35"/>
+    <path d="M335 340 H445 V182"/>
+    <circle cx="530" cy="305" r="35"/>
+    <path d="M530 340 H445"/>
+    <circle cx="690" cy="305" r="35"/>
+    <path d="M690 340 H612 V182"/>
+  </g>
+  <g fill="none" stroke="#D9B26F" stroke-width="2" stroke-linecap="round">
+    <path d="M445 255 V340 H372"/>
+    <path d="M612 255 V340 H676"/>
+  </g>
+  <circle cx="445" cy="340" r="5" fill="#D9B26F"/>
+  <circle cx="612" cy="340" r="4" fill="#D9B26F"/>
+  <g stroke="#2E2420" stroke-width="2.5" stroke-linecap="round">
+    <line x1="445" y1="165" x2="445" y2="152"/>
+    <line x1="612" y1="165" x2="612" y2="152"/>
+  </g>
+  <circle cx="445" cy="149" r="3.5" fill="#2E2420"/>
+  <circle cx="612" cy="149" r="3.5" fill="#2E2420"/>
+  <rect x="439" y="176" width="12" height="4" rx="2" fill="#F3E3C3"/>
+  <rect x="606" y="176" width="12" height="4" rx="2" fill="#F3E3C3"/>
+  <g fill="none" stroke="#E3D3B8" stroke-width="1">
+    <circle cx="316" cy="228" r="23"/>
+    <circle cx="363" cy="228" r="22"/>
+    <circle cx="537" cy="228" r="19"/>
+    <circle cx="683" cy="228" r="17"/>
+    <circle cx="720" cy="228" r="15"/>
+    <circle cx="340" cy="208" r="2.5"/>
+    <circle cx="294" cy="250" r="2.5"/>
+    <circle cx="386" cy="209" r="2"/>
+    <circle cx="704" cy="212" r="2"/>
+  </g>
+  <circle cx="316" cy="228" r="17" fill="#8A1538"/>
+  <circle cx="363" cy="228" r="15" fill="#B5823A"/>
+  <circle cx="537" cy="228" r="13.5" fill="#C99A4F"/>
+  <circle cx="683" cy="228" r="12" fill="#D9B26F"/>
+  <circle cx="720" cy="228" r="10" fill="#E3C68E"/>
+  <path d="M285 408 Q520 380 755 408" fill="none" stroke="#E6D3AE" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="#D9C7A4" stroke-width="1.5" stroke-linecap="round">
+    <line x1="320" y1="411" x2="320" y2="417"/>
+    <line x1="360" y1="407.5" x2="360" y2="413.5"/>
+    <line x1="400" y1="404.7" x2="400" y2="410.7"/>
+    <line x1="440" y1="402.6" x2="440" y2="408.6"/>
+    <line x1="480" y1="401.4" x2="480" y2="407.4"/>
+    <line x1="520" y1="401" x2="520" y2="411"/>
+    <line x1="560" y1="401.4" x2="560" y2="407.4"/>
+    <line x1="600" y1="402.6" x2="600" y2="408.6"/>
+    <line x1="640" y1="404.7" x2="640" y2="410.7"/>
+    <line x1="680" y1="407.5" x2="680" y2="413.5"/>
+    <line x1="720" y1="411" x2="720" y2="417"/>
+  </g>
+  <text x="516" y="462" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="30" letter-spacing="8" fill="#4A3B2E">QAFILA ROBOTICS</text>
+  <text x="514" y="494" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="17" letter-spacing="2" fill="#B5823A">AUTONOMOUS FLEET SYSTEMS</text>
+</svg>

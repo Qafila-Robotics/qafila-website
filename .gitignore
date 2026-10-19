@@ -1,0 +1,14 @@
+/node_modules
+/.next
+/out
+/.turbo
+*.tsbuildinfo
+next-env.d.ts
+
+# generated raster assets (built in CI by `npm run assets`)
+/public/og-image.png
+/public/apple-touch-icon.png
+
+.env
+.env.local
+.DS_Store

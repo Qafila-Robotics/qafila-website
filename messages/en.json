@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "Qafila Robotics — One fleet. Every robot.",
+    "description": "Qafila Fleet is one platform to see, control and coordinate a mixed fleet of robots — humanoids, quadrupeds, drones and ground vehicles — from one screen. Built in Qatar, for the Gulf."
+  },
+  "nav": {
+    "platform": "Platform",
+    "fleet": "Fleet",
+    "useCases": "Use cases",
+    "safety": "Safety",
+    "contact": "Contact",
+    "skipToContent": "Skip to content"
+  },
+  "cta": {
+    "requestPilot": "Request a pilot",
+    "howItWorks": "How it works"
+  },
+  "langSwitch": {
+    "toArabic": "العربية",
+    "toEnglish": "English",
+    "label": "Change language"
+  },
+  "hero": {
+    "tagline": "Autonomous Fleet Systems",
+    "headline": "One fleet. Every robot.",
+    "subhead": "See, control and coordinate every robot from one screen — humanoids, quadrupeds, drones and ground vehicles, led as a single caravan.",
+    "convoyAlt": "The Qafila fleet walking as a convoy on a dune: a ground car, a drone, a quadruped and a humanoid leader."
+  },
+  "problem": {
+    "title": "Many robots, no single view",
+    "intro": "Organisations buy robots from different makers. Each arrives with its own app, its own login and its own map.",
+    "point1Title": "Separate apps",
+    "point1Body": "Every robot type needs its own tool, so operators switch screens to do one job.",
+    "point2Title": "No shared picture",
+    "point2Body": "Nobody sees where every robot is, what it is doing, or whether it is still connected.",
+    "point3Title": "No coordination",
+    "point3Body": "Robots cannot hand work to each other, and what one robot learns stays with that robot."
+  },
+  "howItWorks": {
+    "title": "How Qafila works",
+    "step1Title": "Connect",
+    "step1Body": "Bring any robot onto the fleet — any maker, any network.",
+    "step2Title": "See",
+    "step2Body": "Live video, status and position for every robot on one map.",
+    "step3Title": "Coordinate",
+    "step3Body": "Run missions across robot types from a single screen.",
+    "step4Title": "Learn",
+    "step4Body": "What one robot finds, the whole fleet knows."
+  },
+  "fleet": {
+    "title": "The fleet",
+    "intro": "Four robot types, led as one caravan. Photos of the real fleet are added as they become available.",
+    "photoPending": "[TBD] photo of the real robot",
+    "humanoidTitle": "Humanoid",
+    "humanoidBody": "Works where people work: stairs, doors and tools made for human hands.",
+    "quadrupedTitle": "Quadruped",
+    "quadrupedBody": "Crosses rough ground and tight spaces that wheels cannot.",
+    "droneTitle": "Drone",
+    "droneBody": "Sees from above — roofs, towers and wide sites — then lands and reports.",
+    "groundTitle": "Ground vehicle",
+    "groundBody": "Carries sensors and loads along routes it measures and maps."
+  },
+  "useCases": {
+    "title": "Use cases",
+    "intro": "What the fleet does, and what the operator sees from one screen.",
+    "inspectionTitle": "Industrial inspection",
+    "inspectionTask": "Read gauges, scan equipment and log faults on a schedule.",
+    "inspectionRobots": "Quadruped and drone",
+    "securityTitle": "Facility security and patrol",
+    "securityTask": "Patrol routes, check doors and flag anything out of place.",
+    "securityRobots": "Quadruped and ground vehicle",
+    "eventsTitle": "Events and hospitality",
+    "eventsTask": "Greet, guide and answer questions in busy public spaces.",
+    "eventsRobots": "Humanoid",
+    "researchTitle": "Research and education",
+    "researchTask": "A shared platform for universities to test robots and missions.",
+    "researchRobots": "Every robot type",
+    "operatorSees": "The operator sees"
+  },
+  "safety": {
+    "title": "Safety first",
+    "intro": "We describe how the robots stop. We do not promise zero risk.",
+    "point1": "When the link drops, the robot stops.",
+    "point2": "Every command expires, so a lost message can never keep a robot moving.",
+    "point3": "A new mission needs an operator's approval before it runs.",
+    "point4": "Every action is logged, so you can see what happened and when."
+  },
+  "status": {
+    "title": "Where we are",
+    "intro": "Honest about the stage we are at: the platform is in active development. No phase is marked complete until it is demonstrated on the real fleet or in simulation — not when the code merely compiles.",
+    "pilotLine": "A pilot programme is opening. [TBD] current fleet details.",
+    "legendDone": "Done",
+    "legendInProgress": "In progress",
+    "legendUpcoming": "Upcoming",
+    "phase1": "Secure fleet network & link-loss safety",
+    "phase2": "Universal robot SDK & live media",
+    "phase3": "Edge perception & central AI gateway",
+    "phase4": "Fleet dashboard & robot cockpits",
+    "phase5": "Multi-robot mission orchestrator",
+    "phase6": "Deployment, testing & operations"
+  },
+  "about": {
+    "title": "Built in Qatar, for the Gulf",
+    "body": "Qafila Robotics builds one platform that leads a mixed fleet of robots as a single caravan. We are based in Qatar and build in Arabic and English from the start.",
+    "teamTitle": "The team",
+    "teamBody": "[TBD] founder names, roles and photos, supplied by the founders."
+  },
+  "contact": {
+    "title": "Request a pilot",
+    "intro": "Tell us about your site and what you need. We will reply to arrange a meeting.",
+    "name": "Name",
+    "organisation": "Organisation",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "useCase": "Use case",
+    "useCaseSelect": "Select a use case",
+    "useCaseInspection": "Industrial inspection",
+    "useCaseSecurity": "Facility security and patrol",
+    "useCaseEvents": "Events and hospitality",
+    "useCaseResearch": "Research and education",
+    "useCaseOther": "Something else",
+    "message": "Message",
+    "consent": "I agree that Qafila Robotics may contact me about my request.",
+    "privacyLink": "Read the privacy notice",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "required": "Required",
+    "invalidEmail": "Enter a valid email address.",
+    "consentRequired": "Please agree so we can reply to you.",
+    "successTitle": "Request sent",
+    "successBody": "Thank you. We will be in touch.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Your request did not send. Please try again, or email us directly."
+  },
+  "footer": {
+    "shortLine": "One fleet. Every robot.",
+    "rights": "Qafila Robotics. All rights reserved.",
+    "privacy": "Privacy notice",
+    "platform": "Platform",
+    "fleet": "Fleet",
+    "useCases": "Use cases",
+    "safety": "Safety",
+    "contact": "Contact"
+  },
+  "privacy": {
+    "title": "Privacy notice",
+    "intro": "This notice explains how Qafila Robotics handles the information you send through this site.",
+    "whatTitle": "What we collect",
+    "whatBody": "When you send a pilot request we receive the name, organisation, email, optional phone, chosen use case and message you provide.",
+    "whyTitle": "Why we use it",
+    "whyBody": "We use it only to reply to your request and arrange a meeting. We do not sell it and do not use tracking cookies on this site.",
+    "legalBody": "[TBD] full legal text to be supplied before launch.",
+    "back": "Back to home"
+  }
+}
