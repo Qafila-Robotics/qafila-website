@@ -6,7 +6,7 @@ const COLOR: Record<Type, string> = {
   ground: "#D9B26F",
   drone: "#C99A4F",
   quadruped: "#B5823A",
-  humanoid: "#8A1538",
+  humanoid: "rgb(var(--c-primary-accent))", // theme-aware maroon leader
 };
 
 export default function RobotIcon({ type, className = "" }: { type: Type; className?: string }) {

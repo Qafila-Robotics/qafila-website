@@ -2,8 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Semantic role tokens as "R G B" triplets; .dark overrides them. All WCAG AA
+   on their intended surfaces (see docs/design-reference/brand-guidelines-dark-theme.md). */
 :root {
   color-scheme: light;
+  --c-bg: 250 247 242; /* cream */
+  --c-surface: 255 255 255; /* white */
+  --c-overlay: 250 247 242; /* cream */
+  --c-fg: 46 36 32; /* ink */
+  --c-fg-soft: 74 59 46; /* ink-soft */
+  --c-fg-muted: 140 98 36; /* sand-text */
+  --c-border: 230 220 203; /* line */
+  --c-primary: 138 21 56; /* maroon */
+  --c-primary-accent: 138 21 56; /* maroon */
+  --c-on-primary: 250 247 242; /* cream */
+  --c-danger: 214 69 69; /* danger */
+  --c-online: 47 125 79; /* ok */
+}
+
+.dark {
+  color-scheme: dark;
+  --c-bg: 28 23 20; /* night #1C1714 */
+  --c-surface: 38 32 28; /* #26201C */
+  --c-overlay: 50 42 37; /* #322A25 */
+  --c-fg: 250 247 242; /* cream */
+  --c-fg-soft: 199 185 172; /* #C7B9AC */
+  --c-fg-muted: 217 178 111; /* sand-light */
+  --c-border: 58 48 42; /* #3A302A */
+  --c-primary: 138 21 56; /* maroon (fill; cream text = 8.8:1) */
+  --c-primary-accent: 178 58 92; /* #B23A5C dark maroon */
+  --c-on-primary: 250 247 242; /* cream */
+  --c-danger: 242 139 130; /* #F28B82 */
+  --c-online: 0 229 163; /* #00E5A3 — online/ok only */
 }
 
 html {
@@ -11,8 +41,27 @@ html {
 }
 
 body {
-  background-color: #faf7f2; /* cream */
-  color: #2e2420; /* ink */
+  background-color: rgb(var(--c-bg));
+  color: rgb(var(--c-fg));
+}
+
+/* Ambient maroon glow behind the hero HUD (static — no animation). */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 70% 12%, rgb(138 21 56 / 0.18), transparent 60%);
+}
+
+/* Card edge: hairline border that warms to a maroon glow on hover. */
+.card-glow {
+  box-shadow: 0 0 0 1px rgb(var(--c-border));
+  transition: box-shadow 0.2s ease-out;
+}
+.card-glow:hover {
+  box-shadow:
+    0 0 0 1px rgb(138 21 56 / 0.45),
+    0 8px 24px -6px rgb(0 0 0 / 0.45);
 }
 
 /* Arabic gets a taller line height for its ascenders, descenders and dots. */

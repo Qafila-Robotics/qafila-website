@@ -70,7 +70,8 @@ export default function Contact() {
     }
   }
 
-  const field = "mt-1 w-full rounded-control border border-line bg-white px-3 py-2 text-ink";
+  const field =
+    "mt-1 w-full rounded-control border border-edge bg-overlay px-3 py-2 text-fg placeholder:text-fg-muted focus:border-primary-accent focus:outline-none";
   const err = (k: string) =>
     errors[k] ? (
       <p className="mt-1 text-small text-danger" role="alert">
@@ -79,15 +80,15 @@ export default function Contact() {
     ) : null;
 
   return (
-    <section id="contact" className="border-b border-line">
+    <section id="contact" className="border-b border-edge bg-surface">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <h2 className="text-h2 font-semibold text-ink">{t("title")}</h2>
-        <p className="mt-3 text-ink-soft">{t("intro")}</p>
+        <h2 className="text-h2 font-semibold text-fg">{t("title")}</h2>
+        <p className="mt-3 text-fg-soft">{t("intro")}</p>
 
         {status === "success" ? (
-          <div className="mt-8 rounded-card border border-ok/40 bg-ok/10 p-6" role="status">
-            <h3 className="text-h3 font-semibold text-ok">{t("successTitle")}</h3>
-            <p className="mt-2 text-ink-soft">{t("successBody")}</p>
+          <div className="mt-8 rounded-card border border-online/40 bg-online/10 p-6" role="status">
+            <h3 className="text-h3 font-semibold text-online">{t("successTitle")}</h3>
+            <p className="mt-2 text-fg-soft">{t("successBody")}</p>
           </div>
         ) : (
           <form className="mt-8 grid gap-5" onSubmit={onSubmit} noValidate>
@@ -103,28 +104,28 @@ export default function Contact() {
 
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="text-small font-medium text-ink">
+                <label htmlFor="name" className="text-small font-medium text-fg">
                   {t("name")}
                 </label>
                 <input id="name" name="name" className={field} autoComplete="name" />
                 {err("name")}
               </div>
               <div>
-                <label htmlFor="organisation" className="text-small font-medium text-ink">
+                <label htmlFor="organisation" className="text-small font-medium text-fg">
                   {t("organisation")}
                 </label>
-                <input id="organisation" name="organisation" className={field} autoComplete="organization" />
+                <input id="organisation" name="organisation" className={field} autoComplete="organization" placeholder={t("orgPlaceholder")} />
                 {err("organisation")}
               </div>
               <div>
-                <label htmlFor="email" className="text-small font-medium text-ink">
+                <label htmlFor="email" className="text-small font-medium text-fg">
                   {t("email")}
                 </label>
-                <input id="email" name="email" type="email" className={field} autoComplete="email" dir="ltr" />
+                <input id="email" name="email" type="email" className={field} autoComplete="email" dir="ltr" placeholder={t("emailPlaceholder")} />
                 {err("email")}
               </div>
               <div>
-                <label htmlFor="phone" className="text-small font-medium text-ink">
+                <label htmlFor="phone" className="text-small font-medium text-fg">
                   {t("phone")}
                 </label>
                 <input id="phone" name="phone" type="tel" className={field} autoComplete="tel" dir="ltr" />
@@ -132,7 +133,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="use_case" className="text-small font-medium text-ink">
+              <label htmlFor="use_case" className="text-small font-medium text-fg">
                 {t("useCase")}
               </label>
               <select id="use_case" name="use_case" className={field} defaultValue="">
@@ -148,7 +149,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="text-small font-medium text-ink">
+              <label htmlFor="message" className="text-small font-medium text-fg">
                 {t("message")}
               </label>
               <textarea id="message" name="message" rows={4} className={field} />
@@ -156,11 +157,11 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="flex items-start gap-2 text-small text-ink-soft">
+              <label className="flex items-start gap-2 text-small text-fg-soft">
                 <input type="checkbox" name="consent" value="yes" className="mt-1" />
                 <span>
                   {t("consent")}{" "}
-                  <a href={`/${locale}/privacy/`} className="text-sand-text underline">
+                  <a href={`/${locale}/privacy/`} className="text-fg underline hover:text-fg-soft">
                     {t("privacyLink")}
                   </a>
                 </span>
@@ -171,14 +172,14 @@ export default function Contact() {
             {status === "error" && (
               <div className="rounded-control border border-danger/40 bg-danger/10 p-4" role="alert">
                 <p className="font-medium text-danger">{t("errorTitle")}</p>
-                <p className="text-small text-ink-soft">{t("errorBody")}</p>
+                <p className="text-small text-fg-soft">{t("errorBody")}</p>
               </div>
             )}
 
             <button
               type="submit"
               disabled={status === "sending"}
-              className="justify-self-start rounded-control bg-maroon px-6 py-3 font-medium text-cream hover:opacity-90 disabled:opacity-60"
+              className="justify-self-start rounded-control bg-primary px-6 py-3 font-medium text-on-primary hover:opacity-90 disabled:opacity-60"
             >
               {status === "sending" ? t("sending") : t("submit")}
             </button>

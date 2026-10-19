@@ -2,8 +2,10 @@
 // in size toward the maroon humanoid leader, with caravan dots moving along the
 // route line above. Monoline rounded strokes, one weight, no faces or outlines.
 // Mirrors in RTL so the convoy always moves in reading direction.
+// Maroon leader uses the theme-aware accent so it stays visible on dark surfaces.
+const LEADER = "rgb(var(--c-primary-accent))";
 const DOTS = [
-  { cx: 560, r: 9, fill: "#8A1538" },
+  { cx: 560, r: 9, fill: LEADER },
   { cx: 500, r: 8, fill: "#B5823A" },
   { cx: 440, r: 7, fill: "#C99A4F" },
   { cx: 380, r: 6, fill: "#D9B26F" },
@@ -68,14 +70,14 @@ export default function RobotConvoy({ className = "" }: { className?: string }) 
       </g>
 
       {/* Humanoid leader (maroon), tallest */}
-      <g stroke="#8A1538" {...s}>
+      <g stroke={LEADER} {...s}>
         <path d="M534 150 q0 -16 18 -16 h6 q18 0 18 16 V202 q0 8 -8 8 h-26 q-8 0 -8 -8 Z" />
         <path d="M546 164 H572" />
         <line x1="556" y1="134" x2="556" y2="122" />
         <line x1="548" y1="210" x2="548" y2="224" />
         <line x1="566" y1="210" x2="566" y2="224" />
       </g>
-      <circle cx="556" cy="118" r="2.5" fill="#8A1538" />
+      <circle cx="556" cy="118" r="2.5" fill={LEADER} />
     </svg>
   );
 }

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="280 135 480 240" role="img" aria-label="Qafila Robotics">
+  <line x1="295" y1="228" x2="745" y2="228" stroke="#6E5D49" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <g fill="none" stroke="#FAF7F2" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="335" cy="305" r="35"/>
+    <path d="M335 340 H445 V182"/>
+    <circle cx="530" cy="305" r="35"/>
+    <path d="M530 340 H445"/>
+    <circle cx="690" cy="305" r="35"/>
+    <path d="M690 340 H612 V182"/>
+  </g>
+  <g stroke="#FAF7F2" stroke-width="2.5" stroke-linecap="round">
+    <line x1="445" y1="165" x2="445" y2="152"/>
+    <line x1="612" y1="165" x2="612" y2="152"/>
+  </g>
+  <circle cx="445" cy="149" r="3.5" fill="#FAF7F2"/>
+  <circle cx="612" cy="149" r="3.5" fill="#FAF7F2"/>
+  <rect x="439" y="176" width="12" height="4" rx="2" fill="#F3E3C3"/>
+  <rect x="606" y="176" width="12" height="4" rx="2" fill="#F3E3C3"/>
+  <circle cx="316" cy="228" r="17" fill="#B23A5C"/>
+  <circle cx="363" cy="228" r="15" fill="#B5823A"/>
+  <circle cx="537" cy="228" r="13.5" fill="#C99A4F"/>
+  <circle cx="683" cy="228" r="12" fill="#D9B26F"/>
+  <circle cx="720" cy="228" r="10" fill="#E3C68E"/>
+</svg>

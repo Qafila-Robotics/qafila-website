@@ -18,7 +18,7 @@ export default function LangSwitch({ className = "" }: { className?: string }) {
     <a
       href={href}
       lang={other}
-      className={`text-small font-medium text-ink-soft hover:text-maroon ${className}`}
+      className={`text-small font-medium text-fg-soft hover:text-fg ${className}`}
       aria-label={t("label")}
       onClick={(e) => {
         const hash = typeof window !== "undefined" ? window.location.hash : "";
