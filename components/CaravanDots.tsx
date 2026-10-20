@@ -1,7 +1,7 @@
 // Five caravan dots on the route line: maroon leader leftmost and largest, then
 // sand tones shrinking. Steps gently along the line; stops under reduced-motion.
 const DOTS = [
-  { r: 9, fill: "#8A1538" }, // leader
+  { r: 9, fill: "rgb(var(--c-primary-accent))" }, // leader (theme-aware)
   { r: 8, fill: "#B5823A" },
   { r: 7, fill: "#C99A4F" },
   { r: 6, fill: "#D9B26F" },

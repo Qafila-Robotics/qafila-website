@@ -1,22 +1,27 @@
 import { useTranslations } from "next-intl";
+import { IconLayoutGrid, IconEyeOff, IconShare } from "./icons";
 
 export default function Problem() {
   const t = useTranslations("problem");
   const points = [
-    { title: t("point1Title"), body: t("point1Body") },
-    { title: t("point2Title"), body: t("point2Body") },
-    { title: t("point3Title"), body: t("point3Body") },
+    { title: t("point1Title"), body: t("point1Body"), Icon: IconLayoutGrid },
+    { title: t("point2Title"), body: t("point2Body"), Icon: IconEyeOff },
+    { title: t("point3Title"), body: t("point3Body"), Icon: IconShare },
   ];
   return (
-    <section id="problem" className="border-b border-line bg-white/50">
+    <section id="problem" className="border-b border-edge bg-bg">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="text-h2 font-semibold text-ink">{t("title")}</h2>
-        <p className="mt-3 max-w-2xl text-ink-soft">{t("intro")}</p>
+        <p className="font-mono text-small font-medium uppercase tracking-[0.2em] text-fg-muted">
+          {t("eyebrow")}
+        </p>
+        <h2 className="mt-2 text-h2 font-semibold text-fg">{t("title")}</h2>
+        <p className="mt-3 max-w-2xl text-fg-soft">{t("intro")}</p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {points.map((p) => (
-            <div key={p.title} className="rounded-card border border-line bg-cream p-6">
-              <h3 className="text-h3 font-semibold text-ink">{p.title}</h3>
-              <p className="mt-2 text-ink-soft">{p.body}</p>
+          {points.map(({ title, body, Icon }) => (
+            <div key={title} className="card-glow rounded-card border border-edge bg-surface p-6">
+              <Icon className="h-7 w-7 text-primary-accent" />
+              <h3 className="mt-4 text-h3 font-semibold text-fg">{title}</h3>
+              <p className="mt-2 text-fg-soft">{body}</p>
             </div>
           ))}
         </div>

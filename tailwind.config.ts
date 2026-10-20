@@ -2,11 +2,30 @@ import type { Config } from "tailwindcss";
 
 // Brand tokens from docs: Qafila Robotics Brand Guidelines (Colour + Interface tokens).
 // Sand tones are decoration only; body text uses ink / ink-soft / sand-text / maroon.
+// Semantic role tokens flip between light and dark via CSS variables (see globals.css).
+// Each variable holds an "R G B" triplet so Tailwind's alpha syntax (bg-surface/60) works.
+const sem = (v: string) => `rgb(var(${v}) / <alpha-value>)`;
+
 const config: Config = {
+  darkMode: "class",
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
+        // Semantic, theme-aware roles.
+        bg: sem("--c-bg"),
+        surface: sem("--c-surface"),
+        overlay: sem("--c-overlay"),
+        fg: sem("--c-fg"),
+        "fg-soft": sem("--c-fg-soft"),
+        "fg-muted": sem("--c-fg-muted"),
+        edge: sem("--c-border"),
+        primary: sem("--c-primary"),
+        "primary-accent": sem("--c-primary-accent"),
+        "on-primary": sem("--c-on-primary"),
+        danger: sem("--c-danger"),
+        online: sem("--c-online"),
+        // Fixed brand tokens (artwork / decoration — do not flip).
         maroon: "#8A1538",
         ink: "#2E2420",
         "ink-soft": "#4A3B2E",
@@ -19,11 +38,6 @@ const config: Config = {
         cream: "#FAF7F2",
         night: "#1C1714",
         line: "#E6DCCB",
-        // Dashboard status colours (kept distinct from brand maroon).
-        ok: "#2F7D4F",
-        warn: "#B7791F",
-        danger: "#D64545",
-        info: "#2F6690",
       },
       fontFamily: {
         sans: ["var(--font-plex)", "system-ui", "sans-serif"],

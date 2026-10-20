@@ -20,13 +20,20 @@
     "toEnglish": "English",
     "label": "Change language"
   },
+  "theme": {
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
   "hero": {
     "tagline": "Autonomous Fleet Systems",
     "headline": "One fleet. Every robot.",
     "subhead": "See, control and coordinate every robot from one screen — humanoids, quadrupeds, drones and ground vehicles, led as a single caravan.",
-    "convoyAlt": "The Qafila fleet walking as a convoy on a dune: a ground car, a drone, a quadruped and a humanoid leader."
+    "convoyAlt": "The Qafila fleet walking as a convoy on a dune: a ground car, a drone, a quadruped and a humanoid leader.",
+    "hudLabel": "Illustrative view",
+    "hudLegend": "Fleet classes"
   },
   "problem": {
+    "eyebrow": "The challenge",
     "title": "Many robots, no single view",
     "intro": "Organisations buy robots from different makers. Each arrives with its own app, its own login and its own map.",
     "point1Title": "Separate apps",
@@ -37,6 +44,7 @@
     "point3Body": "Robots cannot hand work to each other, and what one robot learns stays with that robot."
   },
   "howItWorks": {
+    "eyebrow": "How it works",
     "title": "How Qafila works",
     "step1Title": "Connect",
     "step1Body": "Bring any robot onto the fleet — any maker, any network.",
@@ -50,15 +58,16 @@
   "fleet": {
     "title": "The fleet",
     "intro": "Four robot types, led as one caravan. Photos of the real fleet are added as they become available.",
+    "vendorLine": "Qafila works with robots from any maker. Our current fleet:",
     "photoPending": "[TBD] photo of the real robot",
     "humanoidTitle": "Humanoid",
-    "humanoidBody": "Works where people work: stairs, doors and tools made for human hands.",
+    "humanoidBody": "Our Unitree G1 humanoid works where people work — stairs, doors and tools made for human hands.",
     "quadrupedTitle": "Quadruped",
-    "quadrupedBody": "Crosses rough ground and tight spaces that wheels cannot.",
+    "quadrupedBody": "Unitree Go2 quadrupeds cross rough ground and tight spaces that wheels cannot.",
     "droneTitle": "Drone",
-    "droneBody": "Sees from above — roofs, towers and wide sites — then lands and reports.",
+    "droneBody": "In-house Raspberry Pi drones see from above — roofs, towers and wide sites — then land and report.",
     "groundTitle": "Ground vehicle",
-    "groundBody": "Carries sensors and loads along routes it measures and maps."
+    "groundBody": "In-house Raspberry Pi ground cars carry sensors along routes they measure and map."
   },
   "useCases": {
     "title": "Use cases",
@@ -91,6 +100,7 @@
     "pilotLine": "A pilot programme is opening. [TBD] current fleet details.",
     "legendDone": "Done",
     "legendInProgress": "In progress",
+    "legendStartingSoon": "Starting soon",
     "legendUpcoming": "Upcoming",
     "phase1": "Secure fleet network & link-loss safety",
     "phase2": "Universal robot SDK & live media",
@@ -120,6 +130,8 @@
     "useCaseResearch": "Research and education",
     "useCaseOther": "Something else",
     "message": "Message",
+    "orgPlaceholder": "e.g. your organisation",
+    "emailPlaceholder": "name@example.com",
     "consent": "I agree that Qafila Robotics may contact me about my request.",
     "privacyLink": "Read the privacy notice",
     "submit": "Send request",
