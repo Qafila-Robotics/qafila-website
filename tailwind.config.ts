@@ -42,7 +42,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-plex)", "system-ui", "sans-serif"],
         arabic: ["var(--font-plex-ar)", "var(--font-plex)", "sans-serif"],
-        mono: ["var(--font-plex-mono)", "monospace"],
+        mono: ["var(--font-plex-mono)", "var(--font-plex-ar)", "monospace"],
       },
       fontSize: {
         display: ["3.5rem", { lineHeight: "1.1" }],

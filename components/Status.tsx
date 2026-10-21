@@ -51,7 +51,7 @@ export default function Status() {
               </span>
               <span>
                 <span className="block text-fg">{t(key)}</span>
-                <span className="text-micro uppercase tracking-wider text-fg-muted">
+                <span className="caps text-micro text-fg-muted">
                   {t(LEGEND[state])}
                 </span>
               </span>

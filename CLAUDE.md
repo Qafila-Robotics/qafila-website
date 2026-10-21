@@ -11,6 +11,10 @@ This repository holds the public Qafila Robotics landing page (Next.js, App Rout
 - Every page works in Arabic (RTL) and English. Use logical CSS properties.
 - No invented customers, numbers, quotes or capabilities. Mark placeholders [TBD].
 
+## Rules
+- Commits and PRs in all Qafila repos must not mention Claude or AI, and must not include
+  Co-Authored-By or "Generated with" lines.
+
 ## Design tokens and assets
 Design tokens and assets will later come from the private package `@qafila/brand`, published from
 `qafila-platform` (`packages/brand`). Until that package exists, the local `tailwind.config.ts`

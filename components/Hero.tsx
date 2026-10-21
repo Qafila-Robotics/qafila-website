@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="hero-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
         <div>
-          <p className="font-mono text-small font-medium uppercase tracking-[0.2em] text-fg-muted">
+          <p className="eyebrow">
             {t("tagline")}
           </p>
           <h1 className="mt-4 font-semibold text-fg text-[2.5rem] leading-[1.1] sm:text-display">
