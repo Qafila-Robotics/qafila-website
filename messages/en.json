@@ -30,7 +30,13 @@
     "subhead": "See, control and coordinate every robot from one screen — humanoids, quadrupeds, drones and ground vehicles, led as a single caravan.",
     "convoyAlt": "The Qafila fleet walking as a convoy on a dune: a ground car, a drone, a quadruped and a humanoid leader.",
     "hudLabel": "Illustrative view",
-    "hudLegend": "Fleet classes"
+    "hudLegend": "Fleet classes",
+    "legend": {
+      "humanoid": "Humanoid",
+      "quadruped": "Quadruped",
+      "drone": "Drone",
+      "ground": "Ground vehicle"
+    }
   },
   "problem": {
     "eyebrow": "The challenge",

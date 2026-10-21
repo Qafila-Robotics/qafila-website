@@ -64,6 +64,27 @@ body {
     0 8px 24px -6px rgb(0 0 0 / 0.45);
 }
 
+/* Shared label styles. Caps = brand label (uppercase, 0.2em tracking); eyebrow =
+   section label above a heading. English only: Arabic never gets letter-spacing,
+   uppercase or the mono font — they break the joins between letters. */
+@layer components {
+  .caps {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .eyebrow {
+    @apply caps font-mono text-small font-medium text-fg-muted;
+  }
+  .caps:lang(ar),
+  .eyebrow:lang(ar) {
+    letter-spacing: normal;
+    text-transform: none;
+  }
+  .eyebrow:lang(ar) {
+    font-family: var(--font-plex-ar), var(--font-plex), sans-serif;
+  }
+}
+
 /* Arabic gets a taller line height for its ascenders, descenders and dots. */
 html[dir="rtl"] body {
   line-height: 1.8;
@@ -76,28 +97,10 @@ html[dir="rtl"] body {
   border-radius: 2px;
 }
 
-/* Caravan dots step along the route line; leader (last) included. */
-@keyframes caravan-step {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.caravan-dot {
-  animation: caravan-step 1.6s ease-in-out infinite;
-}
-
 /* Respect the OS reduced-motion setting everywhere. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .caravan-dot {
-    animation: none;
   }
   *,
   *::before,

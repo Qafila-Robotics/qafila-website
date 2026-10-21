@@ -1,42 +1,21 @@
 // Brand illustration: the four fleet robots walk as a convoy on a dune, growing
-// in size toward the maroon humanoid leader, with caravan dots moving along the
-// route line above. Monoline rounded strokes, one weight, no faces or outlines.
+// in size toward the maroon humanoid leader. The caravan dots belong to the logo
+// only, so they are not drawn here. Monoline rounded strokes, one weight, no faces or outlines.
 // Mirrors in RTL so the convoy always moves in reading direction.
 // Maroon leader uses the theme-aware accent so it stays visible on dark surfaces.
 const LEADER = "rgb(var(--c-primary-accent))";
-const DOTS = [
-  { cx: 560, r: 9, fill: LEADER },
-  { cx: 500, r: 8, fill: "#B5823A" },
-  { cx: 440, r: 7, fill: "#C99A4F" },
-  { cx: 380, r: 6, fill: "#D9B26F" },
-  { cx: 320, r: 5, fill: "#E3C68E" },
-];
 
 export default function RobotConvoy({ className = "" }: { className?: string }) {
   const s = { fill: "none", strokeWidth: 6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
   return (
     <svg
-      viewBox="0 0 680 280"
+      viewBox="0 100 680 140"
       className={`${className} rtl:-scale-x-100`}
       role="img"
       aria-hidden="true"
       width="680"
-      height="280"
+      height="140"
     >
-      {/* Route line + caravan dots */}
-      <line x1="30" y1="54" x2="650" y2="54" stroke="#CDBFA6" strokeWidth="1.5" strokeDasharray="4 5" />
-      {DOTS.map((d, i) => (
-        <circle
-          key={i}
-          cx={d.cx}
-          cy="54"
-          r={d.r}
-          fill={d.fill}
-          className="caravan-dot"
-          style={{ animationDelay: `${i * 0.2}s` }}
-        />
-      ))}
-
       {/* Dune */}
       <path d="M20 214 Q340 182 660 214" stroke="#E6D3AE" strokeWidth="6" strokeLinecap="round" fill="none" />
 

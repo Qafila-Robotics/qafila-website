@@ -11,7 +11,7 @@ export default function Problem() {
   return (
     <section id="problem" className="border-b border-edge bg-bg">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <p className="font-mono text-small font-medium uppercase tracking-[0.2em] text-fg-muted">
+        <p className="eyebrow">
           {t("eyebrow")}
         </p>
         <h2 className="mt-2 text-h2 font-semibold text-fg">{t("title")}</h2>
