@@ -25,6 +25,11 @@ const config: Config = {
         "on-primary": sem("--c-on-primary"),
         danger: sem("--c-danger"),
         online: sem("--c-online"),
+        // Inverted band (ink in light mode, raised surface in dark mode).
+        "inv-bg": sem("--c-inv-bg"),
+        "inv-fg": sem("--c-inv-fg"),
+        "inv-soft": sem("--c-inv-soft"),
+        "inv-edge": sem("--c-inv-edge"),
         // Fixed brand tokens (artwork / decoration — do not flip).
         maroon: "#8A1538",
         ink: "#2E2420",
@@ -53,6 +58,9 @@ const config: Config = {
         small: ["0.875rem", { lineHeight: "1.5" }],
         micro: ["0.75rem", { lineHeight: "1.4" }],
       },
+      maxWidth: {
+        prose: "68ch",
+      },
       borderRadius: {
         control: "8px",
         card: "12px",
@@ -60,6 +68,7 @@ const config: Config = {
       },
       boxShadow: {
         soft: "0 8px 24px rgba(46,36,32,0.08)",
+        frame: "0 24px 64px -24px rgba(46,36,32,0.28)",
       },
     },
   },

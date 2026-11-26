@@ -1,7 +1,7 @@
 // Renders raster assets social scrapers need, from the brand SVGs.
 // Run once (or in CI before build): `npm run assets`.
 import sharp from "sharp";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 

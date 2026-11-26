@@ -17,7 +17,8 @@ npm run dev                  # http://localhost:3000  → redirects to /en or /a
 
 ```bash
 npm run assets               # renders og-image.png + apple-touch-icon.png from the SVGs
-npm run build                # outputs static site to ./out
+npm run lint && npm run typecheck
+npm run build                # outputs static site to ./out (postbuild adds the CSP)
 npx serve out                # preview the exported site
 ```
 
@@ -35,12 +36,46 @@ One-time setup:
 
 ## Structure
 
-- `app/[locale]/` — locale layout (lang/dir, fonts, metadata/hreflang), page, privacy.
-- `app/layout.tsx` — passthrough root; `public/index.html` redirects `/` by browser language.
-- `components/` — the 11 sections + `RobotConvoy`, `CaravanDots`, `RobotIcon`, `Header`, `Footer`, `LangSwitch`.
-- `messages/{en,ar}.json` — all copy. **Arabic is a first draft — have a native speaker review before launch.**
-- `public/logo-*.svg`, `icon.svg` — brand marks (do not redraw; five dots, maroon leader leftmost and largest).
-- `tailwind.config.ts` — brand colour, type, spacing and radius tokens.
+Pages (each in `/en` and `/ar`, RTL for Arabic):
+
+| Route | What |
+| --- | --- |
+| `/` | Home: value proposition, product frame, what runs today, four pillars, safety, robots, how it works, why Qafila, stage, demo CTA |
+| `/platform/` | Fleet command center, missions, Fleet Brain (in development), safety by design, security, integrations |
+| `/robots/` | One card per robot class with its real status and an install-video slot |
+| `/how-it-works/` | Add robot → run one command → online → take control; architecture diagram |
+| `/developers/` | Connect a robot in 3 steps (code samples matching the platform API), API, contracts, SDK, docs |
+| `/use-cases/` | Inspection, security patrol, events, research: what works today vs. in development |
+| `/company/` | Story, progress, team [TBD], investors, contact form (`#contact`, target of every "Request a demo") |
+| `/privacy/` | Privacy notice |
+
+- `app/[locale]/` — locale layout (lang/dir, self-hosted IBM Plex from `app/fonts/`, header, footer) and pages.
+- `components/` — `ui.tsx` (Container, Section, StatusPill, Screenshot, VideoSlot, CaravanDots…), `Header`, `Footer`,
+  `FleetFrame` (hero product frame), `diagrams/` (SafetyGate, BrainLoop, Architecture), `CodeBlock`, `Contact`.
+- `messages/{en,ar}.json` — all copy, same keys in both. **Arabic needs a native-speaker review before launch.**
+- `lib/site.ts` — page list, metadata helper (canonical, hreflang, Open Graph, Twitter), contact address, code samples.
+- `lib/screenshots.ts` — **where the founder drops real product screenshots and install videos** (see below).
+- `security-headers.mjs` + `scripts/postbuild-security.mjs` — CSP and security headers (see below).
+
+### Adding real screenshots and videos
+
+Every product image on the site is a hatched slot marked **[TBD screenshot]** (or **[TBD video]**) until you set it:
+
+1. Capture from the dashboard (no customer data, tokens, IPs or e-mails in view), 1600 px wide, under 200 KB.
+2. Save as `public/screenshots/<key>.png` (keys listed in `lib/screenshots.ts`: fleet, drawer, camera, control,
+   incidents, capsule, wall, copilot, map, missions, addRobot).
+3. Set the path in `lib/screenshots.ts`, e.g. `fleet: "/screenshots/fleet.png"`. The hero uses `fleet`.
+4. Videos: `public/videos/<class>.mp4` + `<class>.jpg` poster, then set `VIDEOS.<class>`.
+
+### Security headers
+
+The site is a static export with no third-party scripts, fonts or trackers; the only outside origin is the form
+endpoint (Web3Forms). After `npm run build`, `postbuild` gives every page a Content-Security-Policy `<meta>` built
+from sha256 hashes of that page's own inline scripts (no `'unsafe-inline'` scripts), and writes `out/_headers`
+(HSTS, CSP with `frame-ancestors 'none'`, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) for hosts
+that read it. **GitHub Pages ignores `_headers`**: there, HSTS comes from "Enforce HTTPS" on `*.github.io`, and
+`frame-ancestors`/X-Frame-Options need a host or proxy that can set headers (e.g. Cloudflare in front of a custom
+domain). `NEXT_OUTPUT=server npm run build && npm start` serves the same headers from `next.config.ts`.
 
 ## Brand rules (see the Brand Guidelines)
 
@@ -51,6 +86,7 @@ One-time setup:
 
 ## Known follow-ups
 
-- Replace every `[TBD]`: fleet photos, founder names/photos, full privacy legal text, current-fleet details.
+- Replace every `[TBD]`: product screenshots and install videos (`lib/screenshots.ts`), founder names/photos,
+  pilot programme terms, investor materials, public docs link, target dates, privacy legal text.
 - Native-speaker review of the Arabic copy.
 - Enable Web3Forms domain restriction + captcha before sharing the form widely.

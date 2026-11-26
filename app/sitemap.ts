@@ -1,14 +1,16 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://qafila-robotics.github.io";
+import { PAGES, SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["/en", "/ar", "/en/privacy", "/ar/privacy"];
-  return paths.map((p) => ({
-    url: `${SITE_URL}${p}`,
-    changeFrequency: "monthly",
-    priority: p === "/en" || p === "/ar" ? 1 : 0.5,
-  }));
+  const paths = ["/", ...PAGES.map((p) => p.path), "/privacy/"];
+  return paths.flatMap((path) =>
+    (["en", "ar"] as const).map((locale) => ({
+      url: `${SITE_URL}/${locale}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: path === "/" ? 1 : path === "/privacy/" ? 0.3 : 0.8,
+      alternates: { languages: { en: `${SITE_URL}/en${path}`, ar: `${SITE_URL}/ar${path}` } },
+    })),
+  );
 }

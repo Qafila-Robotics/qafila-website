@@ -1,19 +1,69 @@
 {
   "meta": {
-    "title": "Qafila Robotics — One fleet. Every robot.",
-    "description": "Qafila Fleet is one platform to see, control and coordinate a mixed fleet of robots — humanoids, quadrupeds, drones and ground vehicles — from one screen. Built in Qatar, for the Gulf."
+    "siteName": "Qafila Robotics",
+    "home": {
+      "title": "Qafila Robotics — One fleet. Every robot.",
+      "description": "Qafila Fleet is the control room for mixed robot fleets: see every robot live, take control safely and know what happened. Humanoids, quadrupeds, drones and ground vehicles on one platform. Built in Qatar."
+    },
+    "platform": {
+      "title": "Platform — Qafila Fleet",
+      "description": "Fleet command center, missions, Fleet Brain and safety by design: what Qafila Fleet does today and what is in development."
+    },
+    "robots": {
+      "title": "Robots — Qafila Fleet",
+      "description": "Humanoids, quadrupeds, drones and ground vehicles on one platform, and the status of each robot class on Qafila Fleet."
+    },
+    "howItWorks": {
+      "title": "How it works — Qafila Fleet",
+      "description": "Add a robot, run one command, see it online, then take control with a lease, an authenticator code and a safety check."
+    },
+    "useCases": {
+      "title": "Use cases — Qafila Fleet",
+      "description": "Inspection, security patrol, events and hospitality, research and education: the jobs a mixed robot fleet is built for."
+    },
+    "company": {
+      "title": "Company and contact — Qafila Robotics",
+      "description": "Qafila Robotics builds one platform for mixed robot fleets, from Qatar. Request a demo, talk to us about a pilot, or contact us as an investor."
+    },
+    "privacy": {
+      "title": "Privacy notice — Qafila Robotics",
+      "description": "How Qafila Robotics handles the information you send through this site."
+    },
+    "developers": {
+      "title": "Developers — Qafila Fleet",
+      "description": "The Qafila Fleet API, robot contracts and onboarding command: connect a robot in 3 steps."
+    }
   },
   "nav": {
+    "home": "Home",
     "platform": "Platform",
-    "fleet": "Fleet",
+    "robots": "Robots",
+    "howItWorks": "How it works",
     "useCases": "Use cases",
-    "safety": "Safety",
-    "contact": "Contact",
-    "skipToContent": "Skip to content"
+    "company": "Company",
+    "menu": "Menu",
+    "close": "Close menu",
+    "primary": "Primary",
+    "skipToContent": "Skip to content",
+    "developers": "Developers"
   },
   "cta": {
-    "requestPilot": "Request a pilot",
-    "howItWorks": "How it works"
+    "requestDemo": "Request a demo",
+    "seePlatform": "See the platform",
+    "howItWorks": "How it works",
+    "contactUs": "Contact us",
+    "learnMore": "Learn more"
+  },
+  "status": {
+    "available": "Available today",
+    "inDevelopment": "In development",
+    "inProgress": "Integration in progress",
+    "partial": "Partly available",
+    "tbdVideo": "[TBD video]"
+  },
+  "tbd": {
+    "screenshot": "[TBD screenshot]",
+    "illustration": "Illustration, not a screenshot"
   },
   "langSwitch": {
     "toArabic": "العربية",
@@ -24,150 +74,432 @@
     "toLight": "Switch to light theme",
     "toDark": "Switch to dark theme"
   },
-  "hero": {
-    "tagline": "Autonomous Fleet Systems",
-    "headline": "One fleet. Every robot.",
-    "subhead": "See, control and coordinate every robot from one screen — humanoids, quadrupeds, drones and ground vehicles, led as a single caravan.",
-    "convoyAlt": "The Qafila fleet walking as a convoy on a dune: a ground car, a drone, a quadruped and a humanoid leader.",
-    "hudLabel": "Illustrative view",
-    "hudLegend": "Fleet classes",
-    "legend": {
-      "humanoid": "Humanoid",
-      "quadruped": "Quadruped",
-      "drone": "Drone",
-      "ground": "Ground vehicle"
+  "robotClass": {
+    "humanoid": "Humanoid",
+    "quadruped": "Quadruped",
+    "drone": "Drone",
+    "ground": "Ground vehicle"
+  },
+  "home": {
+    "hero": {
+      "title": "One fleet. Every robot.",
+      "lead": "Qafila Fleet is the control room for mixed robot fleets. See every robot live, take control safely and know what happened, for humanoids, quadrupeds, drones and ground vehicles on one platform.",
+      "note": "Built in Qatar. Running today on our own Unitree Go2 quadrupeds.",
+      "frameTitle": "Qafila Fleet — fleet page",
+      "frameCaption": "Fleet page: one card per robot, with link, motion and live camera."
+    },
+    "today": {
+      "title": "What runs today",
+      "intro": "Everything in this list is built and running on our control plane with our own robots. Work that is still being built is marked In development on the Platform page.",
+      "fleetTitle": "Fleet page",
+      "fleetBody": "Every robot as a card: online state, link, motion, battery and agent version, with a details drawer.",
+      "cameraTitle": "Live camera per robot",
+      "cameraBody": "Each online robot's camera, through a gate on the robot, with a short-lived view-only token.",
+      "controlTitle": "Take control",
+      "controlBody": "One operator holds a robot at a time. Enabling motion needs an authenticator code and a named safety check.",
+      "incidentsTitle": "Incidents and alerts",
+      "incidentsBody": "Link lost, offline, low battery, unsynced clock and expiring credentials open incidents and can post to Slack or Telegram.",
+      "capsuleTitle": "Time Capsule",
+      "capsuleBody": "Scrub back through a robot's last 24 hours: link, motion, who had control, battery, incidents and camera snapshots.",
+      "wallTitle": "Wall view",
+      "wallBody": "A read-only fleet screen for an operations room, opened with an expiring viewer link.",
+      "copilotTitle": "Fleet copilot",
+      "copilotBody": "Ask about incidents, missions and history in plain language. It can read; it cannot move a robot.",
+      "mapTitle": "Fleet map",
+      "mapBody": "Robot positions and named places on a site map."
+    },
+    "pillars": {
+      "title": "One platform, four parts",
+      "intro": "What an operator needs to run robots from different makers as one fleet.",
+      "commandTitle": "Fleet command center",
+      "commandBody": "See every robot, its camera and its state on one screen, and take control of one when you need to.",
+      "missionsTitle": "Missions across many robots",
+      "missionsBody": "A mission log and daily figures per robot today. Missions that span several robots and robot types are in development.",
+      "brainTitle": "Fleet Brain",
+      "brainBody": "Each robot learns where it works, and the cloud shares that with every robot that can use it. This is the platform's direction.",
+      "safetyTitle": "Safety by design",
+      "safetyBody": "The robot keeps STOP, the control lease and its gate. The cloud asks; it never goes around them.",
+      "commandLink": "Explore the command center",
+      "missionsLink": "Explore missions",
+      "brainLink": "Explore Fleet Brain",
+      "safetyLink": "Explore safety by design"
+    },
+    "robots": {
+      "title": "Four robot types. One platform.",
+      "intro": "The same fleet page, the same control flow and the same safety rules for every robot class.",
+      "link": "See robot classes"
+    },
+    "how": {
+      "title": "From a new robot to control",
+      "step1": "Add the robot in the dashboard and copy one command.",
+      "step2": "Run it. The robot installs the agent, joins the private fleet network and comes online, locked.",
+      "step3": "Take the control lease, enter your authenticator code and confirm the safety check to enable motion.",
+      "link": "How it works"
+    },
+    "safety": {
+      "title": "The cloud asks. The robot decides.",
+      "body": "Qafila Fleet never moves a robot on its own authority. Every motion request passes through the robot's own gate, which checks the lease, the link and the STOP latch. Lose the link and the robot stops by itself.",
+      "evidence": "In our field tests, both Go2 quadrupeds stopped in under 1 second in all 6 walking link-cut trials (October–November 2026).",
+      "link": "Safety by design"
+    },
+    "stage": {
+      "title": "Where we are",
+      "body": "Qafila Robotics is an early-stage company in Qatar. The platform runs on our own robots in our lab. The humanoid, drone and ground vehicle integrations are in development, and we are opening a small pilot programme.",
+      "pilot": "[TBD] pilot programme terms and start date."
+    },
+    "closing": {
+      "title": "See it on a real robot",
+      "body": "We show the fleet page, the live camera and the take-control flow on our own robots, and walk you through the roadmap."
+    },
+    "why": {
+      "title": "Why Qafila",
+      "w1Title": "Any maker, one fleet",
+      "w1Body": "Robots from different makers on one fleet page, with one control flow. A new robot class is a profile and a driver, not a new app.",
+      "w2Title": "Safety lives on the robot",
+      "w2Body": "STOP, the control lease and the link watch run on the robot itself. The platform cannot go around them.",
+      "w3Title": "Your network, your model",
+      "w3Body": "A private fleet network, hosted or self-hosted, and a copilot that can run on your own model server.",
+      "w4Title": "Arabic and English from day one",
+      "w4Body": "Every screen, alert and page in both languages, built in Qatar for the Gulf."
     }
   },
-  "problem": {
-    "eyebrow": "The challenge",
-    "title": "Many robots, no single view",
-    "intro": "Organisations buy robots from different makers. Each arrives with its own app, its own login and its own map.",
-    "point1Title": "Separate apps",
-    "point1Body": "Every robot type needs its own tool, so operators switch screens to do one job.",
-    "point2Title": "No shared picture",
-    "point2Body": "Nobody sees where every robot is, what it is doing, or whether it is still connected.",
-    "point3Title": "No coordination",
-    "point3Body": "Robots cannot hand work to each other, and what one robot learns stays with that robot."
+  "platform": {
+    "hero": {
+      "title": "The platform",
+      "lead": "Qafila Fleet has four parts: a command center for the whole fleet, missions, a shared Fleet Brain and safety rules that live on the robot. Each part is marked with what exists today."
+    },
+    "jump": "On this page",
+    "command": {
+      "title": "Fleet command center",
+      "lead": "One screen for every robot, whatever its maker.",
+      "fleetTitle": "Fleet page and details drawer",
+      "fleetBody": "A card per robot with online state, link, motion, battery and agent version. Open a robot for its details, its missions today, its settings and its timeline.",
+      "cameraTitle": "Live camera per robot",
+      "cameraBody": "Each online robot's camera streams through the robot's own gate. The tile gets a short-lived, view-only token; it can never drive.",
+      "controlTitle": "Take control with a lease and an authenticator code",
+      "controlBody": "One operator holds a robot's control lease at a time. It ends after 30 seconds without a keepalive, and ending it locks motion. Enabling motion needs an authenticator (TOTP) session and a named check: a spotter, the remote in hand, the area clear. An admin can take over, with a reason that is logged.",
+      "actionsTitle": "Robot actions",
+      "actionsBody": "Buttons such as Stand, Sit or Recover are drawn from each robot's profile. They stay off until motion is enabled, and they go to the robot through its gate, never from the cloud.",
+      "profilesTitle": "Robot setup profiles",
+      "profilesBody": "Turn robot features on or off per robot. Only what the robot class supports can be enabled, every change is logged, and the robot gets its settings each time it connects.",
+      "incidentsTitle": "Incidents and alerts",
+      "incidentsBody": "Rules open and close incidents for link lost, offline, low battery, unsynced clock and expiring credentials, and can post each one in English and Arabic to Slack or Telegram.",
+      "capsuleTitle": "Time Capsule",
+      "capsuleBody": "A 24-hour timeline per robot. Pick a moment to see the link, motion, who held control, battery, open incidents, logged events and, where turned on, a camera snapshot.",
+      "wallTitle": "Wall view",
+      "wallBody": "A read-only fleet screen with live cameras for an operations room. It opens with a viewer link that expires and can be revoked; it has no controls.",
+      "copilotTitle": "Fleet copilot",
+      "copilotBody": "Ask questions in plain language about incidents, the audit log, missions and the timeline. Its tools only read. It can run on your own model server."
+    },
+    "missions": {
+      "title": "Missions across many robots",
+      "lead": "Today the platform records what each robot did. Planning one mission across several robots is the next step.",
+      "todayTitle": "Today: mission log, daily figures and fleet map",
+      "todayBody": "The platform turns the skills a robot reports into a mission log with daily figures per robot: missions done and aborted, STOPs, link losses, time moving and distance. The fleet map shows robot positions and named places on a site map. These pages only observe; they send nothing to a robot. Skill reporting from the robots is still being wired in, so the log fills in as robots start sending it.",
+      "nextTitle": "In development: one mission, many robots",
+      "nextBody": "An operator sets a goal once, and the platform splits it across robot types: a drone looks from above, a quadruped goes closer, a humanoid works with what people use. Every new mission needs an operator's approval before it runs.",
+      "nextNote": "Not available yet. [TBD] target date."
+    },
+    "brain": {
+      "title": "Fleet Brain",
+      "lead": "Each robot learns. The cloud shares it with every robot.",
+      "body": "A robot builds knowledge where it works: maps, named places, what it saw and where. Fleet Brain collects that knowledge in the cloud and shares it with every robot that can use it, so a robot that has never been to a site starts with what the fleet already knows.",
+      "status": "Fleet Brain is the platform's direction and is in development. It is not part of Qafila Fleet today.",
+      "diagramLabel": "Diagram: robots send what they learn to Fleet Brain in the cloud, which shares it back with every robot.",
+      "nodeCloud": "Fleet Brain",
+      "nodeLearn": "learns on site",
+      "nodeShare": "shared with all",
+      "loopLabel": "Animated diagram: a robot learns on site, an operator reviews what it learned, and Fleet Brain shares it with every robot. Then the loop repeats.",
+      "loopLearn": "Learn",
+      "loopLearnBody": "A robot maps a site, names places and notes what it saw.",
+      "loopReview": "Review",
+      "loopReviewBody": "An operator checks what it learned before anything is shared.",
+      "loopShare": "Share",
+      "loopShareBody": "Fleet Brain sends it to every robot that can use it."
+    },
+    "safety": {
+      "title": "Safety by design",
+      "lead": "The robot keeps STOP, the lease and the gate. The cloud never goes around them.",
+      "p1Title": "Lose the link, the robot stops",
+      "p1Body": "The robot watches its link to the platform itself. When it is lost, the robot stops and stays locked until an operator enables it again.",
+      "p2Title": "Every motion command expires",
+      "p2Body": "A command that is not renewed runs out, so a lost message can never keep a robot moving.",
+      "p3Title": "STOP always wins",
+      "p3Body": "STOP from any source is accepted at once and holds until the next Enable.",
+      "p4Title": "One controller at a time",
+      "p4Body": "Operator, mission or on-robot assistant: only the current lease holder can move the robot.",
+      "p5Title": "Starts locked",
+      "p5Body": "After a restart the robot comes online with motion off. Only an operator can turn it on.",
+      "p6Title": "Everything is logged",
+      "p6Body": "Sign-ins, leases, enables, takeovers, tokens and setting changes all go to the audit log.",
+      "evidence": "Field tests, October–November 2026: both Go2 quadrupeds stopped in under 1 second in all 6 walking link-cut trials. We describe how robots stop; we do not promise zero risk.",
+      "diagramLabel": "Diagram: the cloud sends requests; the gate on the robot checks the lease, the link and the STOP latch before anything reaches the motors.",
+      "dCloud": "Qafila Fleet (cloud)",
+      "dCloudSub": "asks, never commands",
+      "dGate": "Gate on the robot",
+      "dCheck1": "lease holder?",
+      "dCheck2": "link alive?",
+      "dCheck3": "STOP latched?",
+      "dRobot": "Motors",
+      "dRefuse": "refused"
+    },
+    "security": {
+      "title": "Security",
+      "lead": "Built for a fleet that moves in the real world. Only what runs today is listed as available.",
+      "robotTitle": "Robot-side safety",
+      "robotBody": "Link watch, STOP latch, lease check and the gate run on the robot. A robot starts locked and stops when its link drops.",
+      "transitTitle": "Encryption in transit",
+      "transitBody": "Robots and operators talk over a private WireGuard network (Tailscale or self-hosted Headscale). The dashboard and every robot gate use HTTPS with certificates for their own names.",
+      "rolesTitle": "Roles and TOTP",
+      "rolesBody": "Viewer, operator and admin roles. Admin sign-in and enabling motion need an authenticator code (TOTP); failed sign-ins share one limit.",
+      "tokensTitle": "Short-lived signed tokens",
+      "tokensBody": "Each robot token is signed and bound to one robot, one operator and one lease, and expires within minutes.",
+      "auditTitle": "Audit log",
+      "auditBody": "Every sign-in, lease, enable, takeover, token and setting change is recorded, with who and when.",
+      "networkTitle": "Default-deny network",
+      "networkBody": "A robot can reach the control plane and nothing else. No unauthenticated endpoint can move a robot.",
+      "updatesTitle": "Verified installs",
+      "updatesBody": "The robot installer pins every download by SHA-256 and installs Tailscale from its signed package repository.",
+      "signedTitle": "Signed agent updates",
+      "signedBody": "Signed, verified updates of the Qafila agent itself.",
+      "secretsTitle": "No secrets in code",
+      "secretsBody": "Secrets live in environment files, never in code and never in logs."
+    },
+    "integrations": {
+      "title": "Works with",
+      "lead": "Open standards and tools your team already uses.",
+      "i1Title": "ROS 2",
+      "i1Body": "Every robot runs a ROS 2 stack in a container; the vendor operating system stays untouched.",
+      "i2Title": "Unitree",
+      "i2Body": "Go2 connected today; G1 integration in progress.",
+      "i3Title": "ArduPilot",
+      "i3Body": "Drones and ground vehicles through MAVROS. In development.",
+      "i4Title": "Slack and Telegram",
+      "i4Body": "Incident alerts by webhook, in English and Arabic.",
+      "i5Title": "Your own AI model",
+      "i5Body": "The copilot uses any OpenAI-compatible endpoint, such as Ollama or vLLM on your own server.",
+      "i6Title": "Tailscale or Headscale",
+      "i6Body": "A private fleet network, hosted or self-hosted."
+    }
   },
-  "howItWorks": {
-    "eyebrow": "How it works",
-    "title": "How Qafila works",
-    "step1Title": "Connect",
-    "step1Body": "Bring any robot onto the fleet — any maker, any network.",
-    "step2Title": "See",
-    "step2Body": "Live video, status and position for every robot on one map.",
-    "step3Title": "Coordinate",
-    "step3Body": "Run missions across robot types from a single screen.",
-    "step4Title": "Learn",
-    "step4Body": "What one robot finds, the whole fleet knows."
+  "robots": {
+    "hero": {
+      "title": "Humanoids, quadrupeds, drones and ground vehicles. One platform.",
+      "lead": "Every robot class gets the same fleet page, the same control flow and the same safety rules. Here is where each class stands today."
+    },
+    "does": "In the fleet",
+    "connects": "How it connects",
+    "quadruped": {
+      "title": "Quadruped",
+      "model": "Unitree Go2",
+      "does": "Crosses rough ground, stairs and tight spaces that wheels cannot.",
+      "connects": "Qafila agent on the robot, ROS 2 stack in a container, a gate in front of every control and camera stream.",
+      "state": "Connected to Qafila Fleet. Link-loss stop tested on both of our Go2s."
+    },
+    "humanoid": {
+      "title": "Humanoid",
+      "model": "Unitree G1",
+      "does": "Works where people work: doors, stairs and tools made for human hands.",
+      "connects": "Same agent and gate, Unitree's official ROS 2 interface, action definitions for its own buttons.",
+      "state": "In simulation and gantry tests. Not yet available for onboarding."
+    },
+    "drone": {
+      "title": "Drone",
+      "model": "In-house, Raspberry Pi 5 with an ArduPilot flight controller",
+      "does": "Sees from above: roofs, towers and wide sites.",
+      "connects": "Agent on the companion computer, ArduPilot through MAVROS, with the flight controller's own failsafe as a backstop.",
+      "state": "Tested in simulation (ArduPilot SITL). Indoor tests next; outdoor flights only with a permit."
+    },
+    "ground": {
+      "title": "Ground vehicle",
+      "model": "In-house, Raspberry Pi 5 with a motor board and 2D LiDAR",
+      "does": "Carries sensors along routes it measures and maps.",
+      "connects": "Same agent, ArduPilot Rover through MAVROS, a physical emergency stop.",
+      "state": "Tested in simulation (ArduPilot SITL). Hardware build in progress."
+    },
+    "byo": {
+      "title": "Bring your own robots",
+      "body": "Qafila Fleet is not tied to one maker. Each robot class is described by a profile: what it can do, which buttons it gets and how it stops when the link drops. Adding a class means writing its profile and its driver, not changing the platform.",
+      "tbd": "[TBD] list of further makers and models, once each one is tested."
+    },
+    "video": "Install video",
+    "videoNote": "Connecting this robot to Qafila Fleet, start to finish."
   },
-  "fleet": {
-    "title": "The fleet",
-    "intro": "Four robot types, led as one caravan. Photos of the real fleet are added as they become available.",
-    "vendorLine": "Qafila works with robots from any maker. Our current fleet:",
-    "photoPending": "[TBD] photo of the real robot",
-    "humanoidTitle": "Humanoid",
-    "humanoidBody": "Our Unitree G1 humanoid works where people work — stairs, doors and tools made for human hands.",
-    "quadrupedTitle": "Quadruped",
-    "quadrupedBody": "Unitree Go2 quadrupeds cross rough ground and tight spaces that wheels cannot.",
-    "droneTitle": "Drone",
-    "droneBody": "In-house Raspberry Pi drones see from above — roofs, towers and wide sites — then land and report.",
-    "groundTitle": "Ground vehicle",
-    "groundBody": "In-house Raspberry Pi ground cars carry sensors along routes they measure and map."
+  "how": {
+    "hero": {
+      "title": "Connect a robot in minutes",
+      "lead": "Four steps from a robot on your bench to a robot you control from the fleet page. The robot is never able to move until an operator says so."
+    },
+    "step1Title": "Add the robot",
+    "step1Body": "In the dashboard, open Add robot and enter its name, class and network host. You get one command. Nothing is created and no key is issued yet.",
+    "step2Title": "Run the command",
+    "step2Body": "From the operator workstation, the command installs the Qafila agent on the robot, joins it to the private fleet network and enrols it with its own credential. The robot maker's system software stays untouched.",
+    "step2Code": "Example of the command the dashboard shows",
+    "step3Title": "See it online",
+    "step3Body": "The robot appears on the fleet page with its link, camera and incidents. It starts locked: motion is off.",
+    "step4Title": "Take control",
+    "step4Body": "Take the control lease, sign in with your authenticator code and confirm the safety check: a spotter, the remote in hand, the area clear. Then enable motion. STOP always wins, and if the link drops the robot stops.",
+    "archTitle": "Under the hood",
+    "archLead": "What runs where.",
+    "archLabel": "Diagram: on the robot, the Qafila agent and a gate sit next to the robot stack. They talk to the Qafila Fleet control plane over a private network. Operators and wall screens use the control plane in a browser.",
+    "aRobot": "On the robot",
+    "aAgent": "Qafila agent",
+    "aAgentSub": "link watch, lock, telemetry",
+    "aGate": "Gate",
+    "aGateSub": "lease, tokens, STOP",
+    "aStack": "Robot stack",
+    "aStackSub": "ROS 2, vendor drivers",
+    "aNet": "Private fleet network",
+    "aCloud": "Qafila Fleet",
+    "aCloudSub": "fleet page, leases, incidents, audit, copilot",
+    "aPeople": "Operators and wall screens",
+    "aPeopleSub": "in a browser",
+    "screenshotAdd": "Add robot page",
+    "screenshotControl": "Take-control confirmation"
   },
   "useCases": {
-    "title": "Use cases",
-    "intro": "What the fleet does, and what the operator sees from one screen.",
-    "inspectionTitle": "Industrial inspection",
-    "inspectionTask": "Read gauges, scan equipment and log faults on a schedule.",
-    "inspectionRobots": "Quadruped and drone",
-    "securityTitle": "Facility security and patrol",
-    "securityTask": "Patrol routes, check doors and flag anything out of place.",
-    "securityRobots": "Quadruped and ground vehicle",
-    "eventsTitle": "Events and hospitality",
-    "eventsTask": "Greet, guide and answer questions in busy public spaces.",
-    "eventsRobots": "Humanoid",
-    "researchTitle": "Research and education",
-    "researchTask": "A shared platform for universities to test robots and missions.",
-    "researchRobots": "Every robot type",
-    "operatorSees": "The operator sees"
+    "hero": {
+      "title": "Use cases",
+      "lead": "The jobs a mixed fleet is built for. We have no customer deployments yet; these are the jobs we design and test for, and the pilot programme is opening."
+    },
+    "robotsLabel": "Robots",
+    "todayLabel": "With Qafila Fleet today",
+    "nextLabel": "In development",
+    "inspection": {
+      "title": "Industrial inspection",
+      "task": "Walk a route on a schedule, look at equipment and log anything wrong.",
+      "robots": "Quadruped, drone",
+      "today": "Live camera, fleet map with named places, incidents and the Time Capsule for what happened when.",
+      "next": "Scheduled missions across a quadruped and a drone."
+    },
+    "security": {
+      "title": "Facility security and patrol",
+      "task": "Patrol routes after hours, check doors and flag what is out of place.",
+      "robots": "Quadruped, ground vehicle",
+      "today": "Wall view for the control room, live cameras, alerts to Slack or Telegram when a robot goes offline or loses its link.",
+      "next": "Patrols that hand over between robots, with Fleet Brain sharing the site map."
+    },
+    "events": {
+      "title": "Events and hospitality",
+      "task": "Greet, guide and answer questions in busy public spaces.",
+      "robots": "Humanoid, quadruped",
+      "today": "One operator in control at a time, a named safety check before motion, STOP from anywhere.",
+      "next": "Humanoid integration, now in simulation and gantry tests."
+    },
+    "research": {
+      "title": "Research and education",
+      "task": "Give students and researchers a shared, safe way to run robots from different makers.",
+      "robots": "Every robot class",
+      "today": "Roles for viewers, operators and admins, an audit log of every action, the copilot for questions about runs.",
+      "next": "[TBD] university pilot details."
+    }
   },
-  "safety": {
-    "title": "Safety first",
-    "intro": "We describe how the robots stop. We do not promise zero risk.",
-    "point1": "When the link drops, the robot stops.",
-    "point2": "Every command expires, so a lost message can never keep a robot moving.",
-    "point3": "A new mission needs an operator's approval before it runs.",
-    "point4": "Every action is logged, so you can see what happened and when."
-  },
-  "status": {
-    "title": "Where we are",
-    "intro": "Honest about the stage we are at: the platform is in active development. No phase is marked complete until it is demonstrated on the real fleet or in simulation — not when the code merely compiles.",
-    "pilotLine": "A pilot programme is opening. [TBD] current fleet details.",
-    "legendDone": "Done",
-    "legendInProgress": "In progress",
-    "legendStartingSoon": "Starting soon",
-    "legendUpcoming": "Upcoming",
-    "phase1": "Secure fleet network & link-loss safety",
-    "phase2": "Universal robot SDK & live media",
-    "phase3": "Edge perception & central AI gateway",
-    "phase4": "Fleet dashboard & robot cockpits",
-    "phase5": "Multi-robot mission orchestrator",
-    "phase6": "Deployment, testing & operations"
-  },
-  "about": {
-    "title": "Built in Qatar, for the Gulf",
-    "body": "Qafila Robotics builds one platform that leads a mixed fleet of robots as a single caravan. We are based in Qatar and build in Arabic and English from the start.",
-    "teamTitle": "The team",
-    "teamBody": "[TBD] founder names, roles and photos, supplied by the founders."
+  "company": {
+    "hero": {
+      "title": "Built in Qatar, for the Gulf",
+      "lead": "Qafila Robotics builds one platform that leads a mixed fleet of robots as a single caravan. We build in Arabic and English from the first line."
+    },
+    "story": {
+      "title": "Why Qafila",
+      "body": "A qafila is a caravan: many travellers moving as one behind a leader. Organisations buy robots from different makers, each with its own app, its own login and its own map. We bring them into one fleet, with one view, one control flow and one set of safety rules."
+    },
+    "team": {
+      "title": "Team",
+      "body": "[TBD] founder names, roles and photos, supplied by the founders."
+    },
+    "progress": {
+      "title": "Progress",
+      "doneTitle": "Done",
+      "done1": "Private fleet network, robot enrolment and link-loss stop, tested on our Go2s",
+      "done2": "Operator control: lease, authenticator code and named safety check before motion",
+      "done3": "Fleet page, live cameras, incidents and alerts, Time Capsule, wall view, fleet map, copilot",
+      "nextTitle": "Next",
+      "next1": "Unitree G1 humanoid integration",
+      "next2": "In-house drone and ground vehicle on real hardware",
+      "next3": "Missions across many robots and Fleet Brain",
+      "next4": "First pilots"
+    },
+    "investors": {
+      "title": "For investors",
+      "body": "We are happy to share the product, the roadmap and the plan behind it. Use the form and choose Investor, or write to us directly.",
+      "tbd": "[TBD] investor materials and the round details the founders want to share.",
+      "email": "Email us"
+    }
   },
   "contact": {
-    "title": "Request a pilot",
-    "intro": "Tell us about your site and what you need. We will reply to arrange a meeting.",
+    "title": "Request a demo",
+    "intro": "Tell us who you are and what you need. We will reply to arrange a meeting.",
     "name": "Name",
     "organisation": "Organisation",
     "email": "Email",
     "phone": "Phone (optional)",
-    "useCase": "Use case",
-    "useCaseSelect": "Select a use case",
-    "useCaseInspection": "Industrial inspection",
-    "useCaseSecurity": "Facility security and patrol",
-    "useCaseEvents": "Events and hospitality",
-    "useCaseResearch": "Research and education",
-    "useCaseOther": "Something else",
+    "role": "I am",
+    "roleSelect": "Choose one",
+    "roleCustomer": "Looking for a pilot or a demo",
+    "roleInvestor": "An investor",
+    "rolePartner": "A robot maker or partner",
+    "roleOther": "Something else",
     "message": "Message",
-    "orgPlaceholder": "e.g. your organisation",
+    "orgPlaceholder": "Your organisation",
     "emailPlaceholder": "name@example.com",
     "consent": "I agree that Qafila Robotics may contact me about my request.",
     "privacyLink": "Read the privacy notice",
     "submit": "Send request",
     "sending": "Sending…",
-    "required": "Required",
-    "invalidEmail": "Enter a valid email address.",
-    "consentRequired": "Please agree so we can reply to you.",
+    "required": "Fill in this field.",
+    "chooseOne": "Choose one option.",
+    "invalidEmail": "Enter an email address like name@example.com.",
+    "consentRequired": "Tick the box so we can reply to you.",
     "successTitle": "Request sent",
-    "successBody": "Thank you. We will be in touch.",
-    "errorTitle": "Something went wrong",
-    "errorBody": "Your request did not send. Please try again, or email us directly."
+    "successBody": "Thank you. We will reply by email.",
+    "errorTitle": "Your request did not send",
+    "errorBody": "Try again, or email us at",
+    "orEmail": "Prefer email? Write to"
   },
   "footer": {
     "shortLine": "One fleet. Every robot.",
     "rights": "Qafila Robotics. All rights reserved.",
     "privacy": "Privacy notice",
-    "platform": "Platform",
-    "fleet": "Fleet",
-    "useCases": "Use cases",
-    "safety": "Safety",
-    "contact": "Contact"
+    "made": "Built in Qatar, for the Gulf."
   },
   "privacy": {
     "title": "Privacy notice",
     "intro": "This notice explains how Qafila Robotics handles the information you send through this site.",
     "whatTitle": "What we collect",
-    "whatBody": "When you send a pilot request we receive the name, organisation, email, optional phone, chosen use case and message you provide.",
+    "whatBody": "When you send a request we receive the name, organisation, email, optional phone, the option you chose and the message you provide.",
     "whyTitle": "Why we use it",
     "whyBody": "We use it only to reply to your request and arrange a meeting. We do not sell it and do not use tracking cookies on this site.",
     "legalBody": "[TBD] full legal text to be supplied before launch.",
     "back": "Back to home"
+  },
+  "developers": {
+    "hero": {
+      "title": "Developers",
+      "lead": "Qafila Fleet has an HTTP API, JSON Schema contracts for robots and one onboarding command. Here is how a robot gets from your bench to the fleet."
+    },
+    "stepsTitle": "Connect a robot in 3 steps",
+    "s1Title": "Onboard the robot",
+    "s1Body": "From the operator workstation. Installs the agent, joins the private network and enrols the robot. It comes online locked.",
+    "s2Title": "Sign in and list robots",
+    "s2Body": "Sign in with your password and authenticator code, then read the fleet.",
+    "s3Title": "Take the lease and enable motion",
+    "s3Body": "Take the robot's control lease, then enable motion with the lease and a named safety check. Keep the lease alive with renew; when it ends, motion locks.",
+    "codeNote": "Examples. Replace the host, robot id and credentials with your own.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "apiTitle": "HTTP API",
+    "apiBody": "Versioned under /v1: sign-in, robots, enrolment, credentials, network, settings, control lease, enable and disable motion, and robot tokens. Every motion route needs a signed-in operator.",
+    "contractsTitle": "Robot contracts",
+    "contractsBody": "JSON Schemas for the agent messages (heartbeat, telemetry, arm and disarm, settings, robot events) and for robot capabilities and actions. A robot's buttons in the dashboard are drawn from its actions file.",
+    "sdkTitle": "Robot SDK",
+    "sdkBody": "A kit for writing a driver for a new robot class, on top of the robot contracts.",
+    "docsTitle": "Documentation",
+    "docsBody": "Public API reference and guides.",
+    "docsTbd": "[TBD] public documentation link. Today the API reference and contracts are shared with pilot partners on request.",
+    "ask": "Ask for API access"
+  },
+  "shots": {
+    "missions": "Mission log",
+    "map": "Fleet map"
   }
 }
