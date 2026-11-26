@@ -1,78 +1,66 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, IBM_Plex_Mono } from "next/font/google";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { locales, isLocale, dir } from "@/i18n/routing";
 import { asset } from "@/lib/asset";
+import { SITE_URL } from "@/lib/site";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "../globals.css";
 
-const plex = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+// Self-hosted IBM Plex, copied byte-for-byte from qafila-platform packages/brand/fonts (OFL).
+const plex = localFont({
+  src: [
+    { path: "../fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400" },
+    { path: "../fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500" },
+    { path: "../fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600" },
+  ],
   variable: "--font-plex",
   display: "swap",
-  // Latin files are small and load fast without preheating; preloading them on
-  // /ar (where only the Arabic font is used) would steal bandwidth from the
-  // Arabic headline font (the LCP element) under throttling.
   preload: false,
+  fallback: ["system-ui", "sans-serif"],
 });
-const plexAr = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic"],
-  // Two weights only (regular + semibold): Arabic uses 500 on minor UI chrome,
-  // which maps cleanly to 600. Cuts a third of the Arabic font payload, which is
-  // the /ar LCP (the hero heading). Headings 600, body 400.
-  weight: ["400", "600"],
+const plexAr = localFont({
+  src: [
+    { path: "../fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2", weight: "400" },
+    { path: "../fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2", weight: "600" },
+  ],
   variable: "--font-plex-ar",
   display: "swap",
+  preload: false,
+  fallback: ["system-ui", "sans-serif"],
 });
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
+const plexMono = localFont({
+  src: [{ path: "../fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400" }],
   variable: "--font-plex-mono",
   display: "swap",
-  // Mono is only used for small labels/numbers, never the LCP headline — don't
-  // let it compete for bandwidth with the heading font on first paint.
   preload: false,
+  fallback: ["ui-monospace", "monospace"],
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://qafila-robotics.github.io";
-
-// Runs before first paint to avoid a theme flash. Default: follow the OS; fall back to dark.
-const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.classList.toggle('dark',t!=='light');}catch(e){document.documentElement.classList.add('dark');}})();`;
+// Runs before first paint to avoid a theme flash: stored choice, else the OS, else light
+// (cream carries most surfaces in the brand guidelines).
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.classList.toggle('dark',t==='dark');}catch(e){}})();`;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
-  return {
-    metadataBase: new URL(SITE_URL),
-    title: t("title"),
-    description: t("description"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: { en: "/en", ar: "/ar", "x-default": "/en" },
-    },
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      url: `/${locale}`,
-      siteName: "Qafila Robotics",
-      locale: locale === "ar" ? "ar_QA" : "en",
-      type: "website",
-      images: [{ url: asset("/og-image.png"), width: 1200, height: 630 }],
-    },
-    icons: { icon: asset("/icon.svg"), apple: asset("/apple-touch-icon.png") },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  icons: { icon: asset("/icon.svg"), apple: asset("/apple-touch-icon.png") },
+};
+
+export const viewport: Viewport = {
+  // Browser UI colour: brand cream / night (meta theme-color needs literal values).
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAF7F2" },
+    { media: "(prefers-color-scheme: dark)", color: "#1C1714" },
+  ],
+};
 
 export default async function LocaleLayout({
   children,
@@ -84,7 +72,12 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   setRequestLocale(locale);
-  const messages = await getMessages();
+  // Only the namespaces client components read (Header, LangSwitch, ThemeToggle, Contact);
+  // everything else renders on the server, so the rest of the catalogue stays out of the HTML.
+  const all = await getMessages();
+  const messages = Object.fromEntries(
+    ["nav", "cta", "langSwitch", "theme", "contact"].map((k) => [k, all[k]]),
+  );
 
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
@@ -93,9 +86,12 @@ export default async function LocaleLayout({
           locale === "ar" ? "font-arabic" : "font-sans"
         } bg-bg text-fg antialiased`}
       >
-        {/* Set the theme before paint: stored choice, else prefers-color-scheme, else dark. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer locale={locale} />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

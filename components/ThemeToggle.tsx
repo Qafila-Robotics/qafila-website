@@ -8,7 +8,7 @@ import { IconSun, IconMoon } from "./icons";
 // set pre-paint by the inline script in the layout; this only mirrors/flips it.
 export default function ThemeToggle({ className = "" }: { className?: string }) {
   const t = useTranslations("theme");
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains("dark"));
@@ -28,7 +28,7 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       type="button"
       onClick={toggle}
       aria-label={dark ? t("toLight") : t("toDark")}
-      className={`rounded-control p-2 text-fg-soft hover:text-primary-accent ${className}`}
+      className={`inline-flex h-11 w-11 items-center justify-center rounded-control text-fg-soft hover:text-fg ${className}`}
     >
       {dark ? <IconSun className="h-5 w-5" /> : <IconMoon className="h-5 w-5" />}
     </button>
